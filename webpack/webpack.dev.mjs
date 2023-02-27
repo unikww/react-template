@@ -1,26 +1,9 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import { merge } from "webpack-merge";
+
+import baseConfig from "./webpack.base.mjs";
 
 const config = {
-  mode: "development",
-  entry: "./src/index.tsx",
-  output: {
-    filename: "main.js",
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: [{ loader: "style-loader", options: { esModule: true } }, "css-loader"],
-      },
-      {
-        test: /\.[jt]sx?$/,
-        loader: "esbuild-loader",
-        options: {
-          target: "es2015",
-        },
-      },
-    ],
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
@@ -32,4 +15,4 @@ const config = {
   cache: true,
 };
 
-export default config;
+export default merge(baseConfig, config);

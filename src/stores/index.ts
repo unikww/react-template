@@ -1,2 +1,2 @@
 export * from "./useStore";
-export { default as stores } from "./CouterStore";
+export { default as stores } from "./CounterStore";

@@ -1,6 +1,6 @@
 import React from "react";
 import { useStores } from "../stores/useStore";
-import { Store } from "../stores/CouterStore";
+import { Store } from "../stores/CounterStore";
 
 type StoreA = { counterStore: Store } & { a: any };
 

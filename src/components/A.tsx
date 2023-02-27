@@ -1,5 +1,5 @@
 import { observer } from "mobx-react";
-import { Store } from "../stores/CouterStore";
+import { Store } from "../stores/CounterStore";
 import { useStores } from "../stores";
 import { useEffect } from "react";
 

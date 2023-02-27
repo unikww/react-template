@@ -7,7 +7,7 @@ export interface Store {
   reset: () => void;
 }
 
-class CouterStore implements Store {
+class CounterStore implements Store {
   @observable count: number = 0;
 
   constructor() {
@@ -27,7 +27,7 @@ class CouterStore implements Store {
   }
 }
 
-const counterStore = new CouterStore();
+const counterStore = new CounterStore();
 
 const stores: Record<string, Store> = {
   counterStore,
