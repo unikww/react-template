@@ -5,6 +5,7 @@
   "description": "a React Starter Template by Webpack",
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack/webpack.dev.mjs",
+    "prepare": "husky install",
     "test": "jest",
     "prettier": "prettier --write src",
     "cspell": "cspell lint 'src/**/*.{js,jsx,ts,tsx}' --no-progress"
@@ -28,6 +29,7 @@
     "esbuild-jest": "^0.5.0",
     "esbuild-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.3",
     "jest": "^29.4.3",
     "jest-environment-jsdom": "^29.4.3",
     "prettier": "^2.8.4",
