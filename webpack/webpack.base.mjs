@@ -1,7 +1,7 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import Dotenv from "dotenv-webpack";
 
-const { NODE_ENV } = process.env;
+const { NODE_ENV, TARGET } = process.env;
 
 const isDev = NODE_ENV === "development";
 
@@ -10,6 +10,7 @@ const config = {
   entry: "./src/index.tsx",
   output: {
     filename: "main.js",
+    publicPath: TARGET === "GitHub" ? "/react-template/" : "/",
   },
   module: {
     rules: [

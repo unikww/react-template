@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config ./webpack/webpack.dev.mjs",
     "build": "NODE_ENV=production rm -rf dist && webpack --config ./webpack/webpack.prod.mjs",
+    "build:github": "NODE_ENV=production TARGET=GitHub rm -rf dist && webpack --config ./webpack/webpack.prod.mjs",
     "serve": "npx serve dist",
     "prepare": "husky install",
     "test": "jest",
@@ -16,7 +17,7 @@
     "webpack",
     "react"
   ],
-  "author": "qinghuani",
+  "author": "qinghuanI",
   "license": "ISC",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
