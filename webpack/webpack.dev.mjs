@@ -1,4 +1,3 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
 import { merge } from "webpack-merge";
 
 import baseConfig from "./webpack.base.mjs";

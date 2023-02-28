@@ -1,7 +1,12 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import Dotenv from "dotenv-webpack";
+
+const { NODE_ENV } = process.env;
+
+const isDev = NODE_ENV === "development";
 
 const config = {
-  mode: "development",
+  mode: NODE_ENV,
   entry: "./src/index.tsx",
   output: {
     filename: "main.js",
@@ -27,6 +32,9 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+    }),
+    new Dotenv({
+      path: isDev ? "./.env.development" : "./.env.production",
     }),
   ],
 };
