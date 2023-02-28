@@ -5,8 +5,8 @@
   "description": "a React Starter Template by Webpack",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --config ./webpack/webpack.dev.mjs",
-    "build": "NODE_ENV=production rm -rf dist && webpack --config ./webpack/webpack.prod.mjs",
-    "build:github": "NODE_ENV=production TARGET=GitHub rm -rf dist && webpack --config ./webpack/webpack.prod.mjs",
+    "build": "rm -rf dist && NODE_ENV=production webpack --config ./webpack/webpack.prod.mjs",
+    "build:github": "rm -rf dist && NODE_ENV=production TARGET=GitHub webpack --config ./webpack/webpack.prod.mjs",
     "serve": "npx serve dist",
     "prepare": "husky install",
     "test": "jest",
