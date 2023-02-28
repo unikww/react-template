@@ -4,15 +4,13 @@ import { merge } from "webpack-merge";
 import baseConfig from "./webpack.base.mjs";
 
 const config = {
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./public/index.html",
-    }),
-  ],
-  resolve: {
-    extensions: [".tsx", ".ts", ".js", ".jsx"],
+  plugins: [],
+  cache: {
+    type: "filesystem",
+    allowCollectingMemory: true,
   },
-  cache: true,
+  devtool: "inline-cheap-source-map",
+  stats: "error-only",
 };
 
 export default merge(baseConfig, config);

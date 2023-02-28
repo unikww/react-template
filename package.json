@@ -5,6 +5,8 @@
   "description": "a React Starter Template by Webpack",
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack/webpack.dev.mjs",
+    "build": "rm -rf dist && webpack --config ./webpack/webpack.prod.mjs",
+    "serve": "npx serve dist",
     "prepare": "husky install",
     "test": "jest",
     "prettier": "prettier --write src",
