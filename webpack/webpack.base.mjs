@@ -1,5 +1,7 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import Dotenv from "dotenv-webpack";
+import NodePolyfillPlugin from "node-polyfill-webpack-plugin";
+import webpack from "webpack";
 
 const { NODE_ENV, TARGET } = process.env;
 
@@ -7,7 +9,7 @@ const isDev = NODE_ENV === "development";
 
 const config = {
   mode: NODE_ENV,
-  entry: "./src/index.tsx",
+  entry: ["core-js", "./src/index.tsx"],
   output: {
     filename: "main.js",
     publicPath: TARGET === "GitHub" ? "/react-template/" : "/",
@@ -29,13 +31,20 @@ const config = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
+    fallback: {
+      fs: false,
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
-    new Dotenv({
-      path: isDev ? "./.env.development" : "./.env.production",
+    // new Dotenv({
+    //   path: isDev ? "./.env.development" : "./.env.production",
+    // }),
+    new NodePolyfillPlugin(),
+    new webpack.ProvidePlugin({
+      process: "process/browser",
     }),
   ],
 };
